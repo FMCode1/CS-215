@@ -3,54 +3,55 @@
 
 <head>
     <title>Login Page</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
 </head>
 <body>
     <nav>
-        <div class="navigation button">
-            <div class="right side">
-                <a href="Login.html">Logout</a>
+        <div>
+            <ul>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
             </div>
-        </div>
+    
     </nav>
-    <div id="container">
-        <header id="header-auth">
-            <h1> Topiclist </h1>
-        </header>
-        <main id="main-center">
-            <div id="align">
-                <form class="auth-form" action="createtopic.html">
-                    <p>Create a new page<input type="submit" value="+" /></p>
-                </form>
-                <div id="topic">
-                    <p>Topic 1</p>
-                    <div class="d-align">
-                       <p>Title         :  215 Notes
-                                Created       :  24 January 2025
-                                Last Modified :  25 January 2025
-                                Note No       :  1
-                                <a href="viewnote.html"><button>View Note</button></a>
-                                <a href="grant.html"><button>Grant/Revoke Access</button></a>
-                       </p> 
-                    </div>
-                </div>
-                <header id="header-auth">
-                    <h1>Topics Shared with you</h1>
-                </header>
-                <div id="topic shared">
-                    <p>Topic 1</p>
-                    <div class="d-align">
-                       <p>Title         :  215 Notes
-                                Created       :  24 January 2025
-                                Last Modified :  25 January 2025
-                                Note No       :  1
-                                <a href="viewnote.html"><button>View Note</button></a>
-                       </p> 
-                    </div>
-                </div>
-            </div>
-        </main>
+    <div class="h1style">
+        <h1>Topic List</h1>
     </div>
+    <div class="notesgrid">
+                <form class="auth-form" action="newtopic.html">
+                    <div class="notgrid"> <input type="submit" value="+" /></div><h3>Create a new Topic </h3>
+                </form>
+                <h1>My Topics</h1>
+                <div class="notegrid">
+                <h2>Topic 1</h2>
+                </div>
+                       <h3>Title         :  215 Notes<br>
+                                Created       :  24 January 2025<br>
+                                Last Modified :  25 January 2025<br>
+                                Note No       :  1<br>
+                                <a href="viewnotes.html"><button>View Note</button></a>
+                                <a href="access.html"><button>Grant/Revoke Access</button></a>
+                       </h3> 
+                       <h1>Topics Shared with you</h1>
+            
+                <div class="notegrid">
+                <h2>Topic 1</h2>
+                </div>
+                        <h3>    Title         :  215 Notes<br>
+                                Created       :  24 January 2025<br>
+                                Last Modified :  25 January 2025<br>
+                                Note No       :  1<br>
+                                <a href="viewnotes.html"><button>View Note</button></a>
+                                <a href="access.html"><button>Grant/Revoke Access</button></a>
+                       </h3> 
+        </div>
+        <footer>
+            Group 9 <br>
+            Mahee Patel - 200483136<br>
+            Feechi Onyenali Mgbeoduru - 200455227<br>
+            Komalpreet Kaur - 200499009
+        </footer>
 </body>
 
 </html>
