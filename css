@@ -1,0 +1,338 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+}
+
+ul
+{
+    list-style-type: none;
+    padding: 50px;
+    margin: 0;
+    display: flex;
+    justify-content: flex-end;
+    background-color: green;
+    height: 100%;
+}
+
+li 
+{
+    margin-right: 20px;
+}
+
+a 
+{
+    text-decoration: none;
+    color: black;
+    font-size: larger;
+}
+
+a:hover 
+{
+    color: white;
+}
+
+.h1style 
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 30px;
+    color: green;
+}
+
+.accessgrid 
+{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    place-items: center;
+}
+
+.accessgrid h2 
+{
+    color: #333;
+    font-size: 1.5rem;
+}
+
+.username-row 
+{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.avatar-row 
+{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+}
+
+.avatar-item 
+{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.avatar-item img 
+{
+    width: 50px;
+    height: auto;
+}
+
+.access-checkboxes input[type="checkbox"]
+{
+    margin-bottom: 10px;
+}
+
+.notesgrid 
+{
+    margin: 20px;
+    display: grid;
+    width: 92%;
+    height: auto;
+    border: 2px solid green;
+    padding: 40px;
+    justify-self: center;
+}
+
+.notegrid 
+{
+    margin: 10px;
+    display: grid;
+    width: 6%;
+    height: auto;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px;
+    justify-self: left;
+}
+
+.notgrid 
+{
+    margin: 10px;
+    display: grid;
+    width: 6%;
+    height: 20%;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 50px;
+    justify-self: left;
+}
+
+.noteversions 
+{
+    display: grid;
+    width: fit-content;
+    height: fit-content;
+    grid-row: 8;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.datescreen 
+{
+    gap: 20px;
+}
+
+.writeup 
+{
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.avatar-item .noteimage 
+{
+    width: 20%;
+    justify-self: center;
+}
+
+.newnotegrid 
+{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    justify-content: center;
+    text-align: center;
+}
+
+.newnoteinput 
+{
+    height: 100px;
+}
+
+.newnotesubmit 
+{
+    place-self: center start;
+}
+
+footer 
+{
+    padding: 20px;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    background-color: green;
+    color: white;
+    height: 60px;
+    align-items: center;
+}
+
+.form-input-grid 
+{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    align-items: center;
+}
+
+#container
+{
+    display: grid;
+    grid-template-columns: 1fr 1.5fr 1fr;
+    grid-template-rows: 150px auto 100px;
+    grid-gap: 5px; 
+    min-height: 100vh;
+}
+
+#main 
+{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+
+    justify-self: center;
+}
+
+.auths-form 
+{
+    
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 5px;
+    padding: 2em;
+}
+
+.form-note01 
+{
+    margin:30px;
+}
+
+.grid 
+{
+    display: grid;
+    grid-template-columns: auto 1fr;    grid-gap: 25px;
+
+
+}
+.clickright
+{
+    text-align: right;
+    margin-top: 25px;
+}
+#headi 
+{
+    font-size: 30px;
+
+    background-color: green;
+    color: white;
+    grid-column: 1/4;
+    grid-row: 1/2;
+    text-align: center;
+    display: grid;
+
+}
+
+#header-auth {
+    font-size: 30px;
+    background-color: green;
+    color: white;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    display: grid;
+}
+
+#header-auth h1 {
+    font-size: 1.5em;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+}
+
+#main-center {
+    grid-column-start: 2;
+    grid-column-end: 3;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    justify-self: center;
+}
+
+.auths-form {
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2em;
+}
+
+.form-input-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 1fr 1.5fr;
+    grid-template-rows: auto;
+    grid-gap: 5px;
+}
+
+.align-right {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.submit-button {
+    padding: 2px;
+    margin: 5px 0;
+}
+
+.form-note {
+    margin: 5px 30px;
+}
+
+#header-topic {
+    background-color: green;
+    color: white;
+    grid-column: 1 / 4;
+    grid-row: 1 / 2;
+    display: grid;
+}
+
+#header-topic h1 {
+    font-size: 1.5em;
+    justify-self: center;
+    align-self: center;
+    margin: 0;
+}
+
+.topic-form {
+    margin-top: 60px;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 2em;
+}
+
+.topic-form label {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+}
+
+.align-right {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+}
