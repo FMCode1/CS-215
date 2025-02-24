@@ -1,9 +1,12 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
     <title>CS215 Homepage</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+
+    <script src="js/eventHandler.js"></script>
 </head>
 
 <body>
@@ -12,55 +15,54 @@
             <h1>Sign Up</h1>
         </header>
         <main id="main">
-            <form class="auths-form">
+            <form class="auth-form" action="login.html" method="post" id="signupForm">
                 <div class="form-input-grid">
                     <label for="email">Email address</label>
                     <input type="text" id="email" name="email" />
-
-                    &nbsp;
-                    <div id="err-email"></div>
+                    <div id="error-text-email" class="error-text-hidden">
+                        Email is invalid.
+                    </div>
 
                     <label for="sname">Screen Name</label>
                     <input type="text" id="sname" name="sname" />
-
-                    &nbsp;
-                    <div id="err-sname"></div>
+                    <div id="error-text-sname" class="error-text-hidden">
+                        Screen name is invalid.
+                    </div>
 
                     <label for="pwd">Password</label>
                     <input type="password" id="pwd" name="pwd" />
-
-                    &nbsp;
-                    <div id="err-pwd"></div>
+                    <div id="error-text-pwd" class="error-text-hidden">
+                        Password is invalid.
+                    </div>
 
                     <label for="cpassword">Confirm Password</label>
-                    <input type="password" id="cpassword" name="confirm password" />
-
-                    &nbsp;
-                    <div id=" err-cpassword"></div>
+                    <input type="password" id="cpassword" name="confirm_password" />
+                    <div id="error-text-cpassword" class="error-text-hidden">
+                        Password doesn't match.
+                    </div>
 
                     <label for="avatar">Avatar</label>
                     <input type="file" id="avatar" name="avatar" />
-
-                    &nbsp;
-                    <div id=" err-avatar"></div>
+                    <div id="error-file-avatar" class="error-file-hidden">
+                        Avatar is invalid.
+                    </div>
                 </div>
-
                 <div class="align-right">
-                    <button type="submit" class="submit-button" href="login.html">Create account</button>
-
+                    <button type="submit" class="submit-button">Create account</button>
                 </div>
-            
-            <div class="form-note">
-                Already have an account? <a href="login.html">Login</a>
-            </div>
+                <div class="form-note">
+                    Already have an account? <a href="login.html">Login</a>
+                </div>
+            </form>
         </main>
     </div>
     <footer>
-        Group 9 <br>
-        Mahee Patel - 200483136<br>
-        Feechi Onyenali Mgbeoduru - 200455227<br>
+        Group 9 <br />
+        Mahee Patel - 200483136<br />
+        Feechi Onyenali Mgbeoduru - 200455227<br />
         Komalpreet Kaur - 200499009
     </footer>
+    <script src="js/eventRegisterSignup.js"></script>
 </body>
 
 </html>

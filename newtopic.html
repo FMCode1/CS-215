@@ -1,42 +1,46 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+    <meta charset="UTF-8" />
     <title>CS215 Homepage</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script src="js/eventHandlerNewTopic.js"></script>
 </head>
-<nav>
-    <div>
-        <ul>
-            <li><a href="newtopic.html">Create Topic</a></li>
-            <li><a href="topiclist.html">Topic List</a></li>
-            <li><a href="access.html">Access</a></li>
-            <li><a href="signup.html">Signup</a></li>
-            <li><a href="login.html">Logout</a></li>
-        </ul>
-        </div>
 
-</nav>
-<div class="h1style">
-    <h1>Create a new topic</h1>
-</div>
 <body>
+    <nav>
+        <div>
+            <ul>
+                <li><a href="newtopic.html">Create Topic</a></li>
+                <li><a href="topiclist.html">Topic List</a></li>
+                <li><a href="access.html">Access</a></li>
+                <li><a href="signup.html">Signup</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+    <div class="h1style">
+        <h1>Create a new topic</h1>
+    </div>
     <div id="container">
         <main id="main">
             <form class="topic-form">
                 <label for="topic">Topic Name</label>
                 <input type="text" id="topic" name="topic" />
-
-                <div class="align-right">
+                <div id="error-text-text" class="error-text-hidden">
+                    Topic name must be non-blank and 256 characters or less.
+                </div>
+                <div class="align-center">
                     <button type="submit" class="submit-button">Submit</button>
                 </div>
             </form>
         </main>
     </div>
     <footer>
-        Group 9 <br>
-        Mahee Patel - 200483136<br>
-        Feechi Onyenali Mgbeoduru - 200455227<br>
+        Group 9 <br />
+        Mahee Patel - 200483136<br />
+        Feechi Onyenali Mgbeoduru - 200455227<br />
         Komalpreet Kaur - 200499009
     </footer>
 </body>
