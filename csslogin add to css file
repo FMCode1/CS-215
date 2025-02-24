@@ -1,0 +1,17 @@
+.invalid
+{
+    border: 2px solid red;
+}
+
+.error-text
+{
+     color: red;
+     font-style: italic;
+     text-align: right;
+}
+
+.hidden
+{
+    visibility: hidden;
+}
+
