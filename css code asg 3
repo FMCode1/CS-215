@@ -1,0 +1,20 @@
+/* General error highlighting */
+.error {
+    border: 2px solid red;
+    background-color: #ffe5e5;
+}
+
+/* Error message hidden by default */
+.error-text-hidden {
+    display: none;
+    color: red;
+    font-size: 12px;
+    margin-top: 4px;
+}
+
+/* Avatar error message */
+.error-file-hidden {
+    display: none;
+    color: red;
+    font-size: 12px;
+}
