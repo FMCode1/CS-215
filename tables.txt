@@ -1,0 +1,41 @@
+CREATE TABLE user (
+   user_id          INT                 NOT NULL AUTO_INCREMENT,
+   user_email       VARCHAR(255)        NOT NULL,
+   user_password    VARCHAR(255)        NOT NULL,
+   user_name        VARCHAR(255)        NOT NULL,
+   user_DofB        VARCHAR(255),
+   user_PicName     VARCHAR(255),
+   PRIMARY KEY      (user_id)
+);
+
+CREATE TABLE topic (
+   topic_id         INT                 NOT NULL AUTO_INCREMENT,
+   user_id          INT                 NOT NULL,
+   title            VARCHAR(255)        NOT NULL,
+   created_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+   last_edited_at   TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+   PRIMARY KEY      (topic_id),
+   FOREIGN KEY      (user_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE note (
+   note_id          INT                 NOT NULL AUTO_INCREMENT,
+   topic_id         INT                 NOT NULL,
+   user_id          INT                 NOT NULL,
+   content          VARCHAR(255)        NOT NULL,
+   created_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY      (note_id),
+   FOREIGN KEY      (topic_id) REFERENCES topic(topic_id),
+   FOREIGN KEY      (user_id) REFERENCES user(user_id)
+);
+
+CREATE TABLE access (
+   access_id        INT                 NOT NULL AUTO_INCREMENT,
+   topic_id         INT                 NOT NULL,
+   user_id          INT                 NOT NULL,
+   status           TINYINT             NOT NULL, -- 1 for active, 0 for revoked
+   granted_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+   PRIMARY KEY      (access_id),
+   FOREIGN KEY      (topic_id) REFERENCES topic(topic_id),
+   FOREIGN KEY      (user_id) REFERENCES user(user_id)
+);
