@@ -11,3 +11,20 @@ VALUES
 (1, 'Introduction to SQL'),
 (2, 'Advanced MySQL Techniques'),
 (1, 'Database Normalization');
+
+-- Insert dummy data into note table
+INSERT INTO note (topic_id, user_id, content)
+VALUES 
+(1, 1, 'SQL is a powerful language for managing databases.'),
+(1, 2, 'I love learning SQL.'),
+(2, 2, 'Advanced topics can be challenging but fun.'),
+(3, 1, 'Normalization helps reduce redundancy.');
+
+-- Insert dummy data into access table
+INSERT INTO access (topic_id, user_id, status)
+VALUES 
+(1, 1, 1),
+(1, 2, 1),
+(2, 2, 1),
+(3, 1, 1),
+(3, 3, 0);
