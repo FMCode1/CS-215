@@ -1,3 +1,18 @@
+select user_id, user_name, user_PicName
+    -> from user
+    -> where user_name = 'Alice' and user_password = 'password1'
+    -> ;
+
+select t.user_id, t.title, t.created_at, t.last_edited_at, count(n.note_id) from access a
+    -> left join topic t 
+    -> on a.topic_id = t.topic_id
+    -> left join note n
+    -> on t.topic_id = n.topic_id
+    -> where a.status = 1 and a.user_id = 1
+    -> group by t.topic_id, a.granted_at
+    -> order by a.granted_at desc
+    -> ;
+
 SELECT title, created_at, last_edited_at 
     -> FROM topic 
     -> WHERE topic_id = 1;
