@@ -1,0 +1,112 @@
+
+
+mysql> CREATE TABLE user (
+    ->    user_id          INT                 NOT NULL AUTO_INCREMENT,
+    ->    user_email       VARCHAR(255)        NOT NULL,
+    ->    user_password    VARCHAR(255)        NOT NULL,
+    ->    user_name        VARCHAR(255)        NOT NULL,
+    ->    user_DofB        VARCHAR(255),
+    ->    user_PicName     VARCHAR(255),
+    ->    PRIMARY KEY      (user_id)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> CREATE TABLE topic (
+    ->    topic_id         INT                 NOT NULL AUTO_INCREMENT,
+    ->    user_id          INT                 NOT NULL,
+    ->    title            VARCHAR(255)        NOT NULL,
+    ->    created_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+    ->    last_edited_at   TIMESTAMP           DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+    ->    PRIMARY KEY      (topic_id),
+    ->    FOREIGN KEY      (user_id) REFERENCES user(user_id)
+    -> );
+Query OK, 0 rows affected (0.26 sec)
+
+mysql> CREATE TABLE note (
+    ->    note_id          INT                 NOT NULL AUTO_INCREMENT,
+    ->    topic_id         INT                 NOT NULL,
+    ->    user_id          INT                 NOT NULL,
+    ->    content          VARCHAR(255)        NOT NULL,
+    ->    created_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+    ->    PRIMARY KEY      (note_id),
+    ->    FOREIGN KEY      (topic_id) REFERENCES topic(topic_id),
+    ->    FOREIGN KEY      (user_id) REFERENCES user(user_id)
+    -> );
+Query OK, 0 rows affected (0.02 sec)
+
+mysql> CREATE TABLE access (
+    ->    access_id        INT                 NOT NULL AUTO_INCREMENT,
+    ->    topic_id         INT                 NOT NULL,
+    ->    user_id          INT                 NOT NULL,
+    ->    granted_at       TIMESTAMP           DEFAULT CURRENT_TIMESTAMP,
+    ->    PRIMARY KEY      (access_id),
+    ->    FOREIGN KEY      (topic_id) REFERENCES topic(topic_id),
+    ->    FOREIGN KEY      (user_id) REFERENCES user(user_id)
+    -> );
+Query OK, 0 rows affected (0.03 sec)
+
+mysql> show tables
+    -> ;
++------------------+
+| Tables_in_kkn079 |
++------------------+
+| Loggers          |
+| Logins           |
+| access           |
+| note             |
+| students         |
+| topic            |
+| user             |
++------------------+
+7 rows in set (0.00 sec)
+
+mysql> mysql> select user_id, user_name, user_PicName
+    -> from user
+    -> where user_name = 'Alice' and user_password = 'password1'
+    -> ;
++---------+-----------+--------------+
+| user_id | user_name | user_PicName |
++---------+-----------+--------------+
+|       1 | Alice     | alice.png    |
++---------+-----------+--------------+
+1 row in set (0.00 sec)
+
+mysql> select t.user_id, t.title, t.created_at, t.last_edited_at, count(n.note_id) from access a
+    -> left join topic t 
+    -> on a.topic_id = t.topic_id
+    -> left join note n
+    -> on t.topic_id = n.topic_id
+    -> where a.status = 1 and a.user_id = 1
+    -> group by t.topic_id, a.granted_at
+    -> order by a.granted_at desc
+    -> ;
++---------+------------------------+---------------------+---------------------+------------------+
+| user_id | title                  | created_at          | last_edited_at      | count(n.note_id) |
++---------+------------------------+---------------------+---------------------+------------------+
+|       1 | Introduction to SQL    | 2025-03-16 20:01:52 | 2025-03-16 20:01:52 |                2 |
+|       1 | Database Normalization | 2025-03-16 20:01:52 | 2025-03-16 20:01:52 |                1 |
++---------+------------------------+---------------------+---------------------+------------------+
+2 rows in set (0.00 sec)
+mysql> SELECT title, created_at, last_edited_at 
+    -> FROM topic 
+    -> WHERE topic_id = 1;
++---------------------+---------------------+---------------------+
+| title               | created_at          | last_edited_at      |
++---------------------+---------------------+---------------------+
+| Introduction to SQL | 2025-03-16 20:01:52 | 2025-03-16 20:01:52 |
++---------------------+---------------------+---------------------+
+1 row in set (0.00 sec)
+
+mysql> SELECT n.content, n.created_at, u.user_name, u.user_PicName  
+    -> FROM note n  
+    -> JOIN user u ON n.user_id = u.user_id  
+    -> WHERE n.topic_id = 1  
+    -> ORDER BY n.created_at DESC;
++----------------------------------------------------+---------------------+-----------+--------------+
+| content                                            | created_at          | user_name | user_PicName |
++----------------------------------------------------+---------------------+-----------+--------------+
+| SQL is a powerful language for managing databases. | 2025-03-16 20:01:52 | Alice     | alice.png    |
+| I love learning SQL.                               | 2025-03-16 20:01:52 | Bob       | bob.png      |
++----------------------------------------------------+---------------------+-----------+--------------+
+2 rows in set (0.00 sec)
+
