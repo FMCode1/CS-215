@@ -1,0 +1,9 @@
+SELECT title, created_at, last_edited_at 
+    -> FROM topic 
+    -> WHERE topic_id = 1;
+
+SELECT n.content, n.created_at, u.user_name, u.user_PicName  
+    -> FROM note n  
+    -> JOIN user u ON n.user_id = u.user_id  
+    -> WHERE n.topic_id = 1  
+    -> ORDER BY n.created_at DESC;
