@@ -12,18 +12,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $errors = array();
     $dataOK = TRUE;
     
-    $email= test_input($_POST["user_email"]);
+    $email= test_input($_POST["email"]);
     $emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
     if (!preg_match($emailRegex, $email)) 
     {
-        $errors["user_email"] = "Invalid Email.";
+        $errors["email"] = "Invalid Email.";
         $dataOK = FALSE;
     }
 
-    $password = test_input($_POST["user_password"]);
+    $password = test_input($_POST["pwd"]);
     $passwordRegex = "/^.{8}$/";
     if (!preg_match($passwordRegex, $password)) {
-        $errors["user_password"] = "Invalid Password";
+        $errors["pwd"] = "Invalid Password";
         $dataOK = FALSE;
     }
     if ($dataOK) 
