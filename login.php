@@ -1,4 +1,4 @@
-<?php
+_<?php
 require_once("db.php");
 
 function test_input($data) {
@@ -16,14 +16,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $emailRegex = "/^[^\s@]+@[^\s@]+\.[^\s@]+$/";
     if (!preg_match($emailRegex, $email)) 
     {
-        $errors["email"] = "Invalid Email.";
+        $errors["user_email"] = "Invalid Email.";
         $dataOK = FALSE;
     }
 
     $password = test_input($_POST["user_password"]);
     $passwordRegex = "/^.{8}$/";
     if (!preg_match($passwordRegex, $password)) {
-        $errors["password"] = "Invalid Password";
+        $errors["user_password"] = "Invalid Password";
         $dataOK = FALSE;
     }
     if ($dataOK) 
