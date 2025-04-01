@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
             throw new PDOException($e->getMessage(), (int)$e->getCode());
         }
 
-        $query = "SELECT user_id, user_email, user_password, user_name, userDofB, user_PicName from Loggers where user_email='$email' and user_password='$password'";
+        $query = "SELECT user_id, user_email, user_password, user_name, user_DofB, user_PicName from user where user_email= '$email' and user_password= '$password'";
         $result = $db->query($query);
 
         if (!$result) 
