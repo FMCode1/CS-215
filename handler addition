@@ -1,0 +1,29 @@
+function time_func(event)
+{ 
+    if (username.length > 0) {
+		let xhr = new XMLHttpRequest();
+		xhr.onreadystatechange = function () {
+			if (xhr.readyState == 4 && xhr.status == 200) {
+
+				let topicArray = null;
+				let topicArray = JSON.parse(this.responseText);
+                lastLogin = document.getElementById("form-note01");
+                lastLogin.innerHTML = ""; 
+                if(topicArray.length > 0) 
+                {
+                    let usernameFromajaxBackhand = loginHistoryArray[0].username;
+                    if(usernameFromajaxBackhand == null)
+                    {
+                        for( let i = 0; i < topicArray.length;i++)
+                        {
+                            let jsonObject = topicArray[i];
+                            let fetch = document.createElement("div");
+                            fetch.innerHTML = "<div class='note-grid'><img src"
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+setInterval(time_func,90000);
